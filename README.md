@@ -1,26 +1,21 @@
-# engine-helper-bug
+# engine-gjt-gts-bug
 
-[Short description of the addon.]
+The showcases a problem we have when using gjs/gts in engines.
 
-## Compatibility
+The problem happens when we import a component from a `gjs/gts` file inside of an engine.
+The component can come from a v1 or v2 addon, if that component uses a class based helper it will error
 
-- Ember.js v4.12 or above
-- Embroider or ember-auto-import v2
+In our case we have `test-app` which mount `engine-foo` which imports a `foofoobar` component from `random-v2-addon`, the `foofoobar` component uses an `or` helper which is a class based helper.
 
-## Installation
+
+## Reproduction
 
 ```
-ember install engine-helper-bug
+cd test-app
+npm run start
 ```
 
-## Usage
+After the test-app is served click the show engine button, it will work the first time,
+but if you close the engine, and open it again it will fail with the following error
 
-[Longer description of how to use the addon in apps.]
 
-## Contributing
-
-See the [Contributing](CONTRIBUTING.md) guide for details.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE.md).

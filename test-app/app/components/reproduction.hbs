@@ -1,0 +1,10 @@
+{{#if this.showEngine}}
+  {{mount "engine-foo"}}
+{{/if}}
+<button type="button" {{on "click" this.toggleEngine}}>
+  {{#if this.showEngine}}
+    Hide engine-foo
+  {{else}}
+    Show engine-foo
+  {{/if}}
+</button>
